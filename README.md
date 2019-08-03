@@ -11,6 +11,12 @@ The GPS's TX pin is connected to Heltec's pin 12.
 
 You can power the entire system with a powerbank. The GPS module can be powered from the Heltec's 5v (or 3v3, depending on the module)  and GND pins, so you don't need the GND reference for the serial communication. Take care that the output voltage of the GPS TX pin is 3.3V.
 
+### Programming
+
+In your Arduino IDE, install the ESP32 board (https://github.com/espressif/arduino-esp32). Install the libraries U8g2, the MCCI LoRaWAN LMIC library and finally the TinyGPS++ (http://arduiniana.org/libraries/tinygpsplus/).
+
+Create an Arduino project and clone or copy the contents from the file TTNMapperNode.ino. Plug the Heltec module to any USB port in your PC and choose in the Arduino IDE the board Heltec Wifi LoRa 32(V2) and the correct serial port. Upload the skecth.
+
 ### TTN console
 
 For simplicity, the Activation Method used for the device is ABP. The Frame Counter Checks option must be deactivated in the Device Settings section so that it does not have to be reset every time the module is switched on. In the Decoder section of the Payload Formats of the application, the following code has to be applied:
