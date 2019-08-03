@@ -1,4 +1,5 @@
 # Heltec-Wifi-Lora-32-TTN-Mapper
+
 ## Create a TTN Mapper node with a Heltec Wifi Lora 32 V2
 
 ![TTN Mapper node](nodo_ttn_mapper.jpg?raw=true "TTN Mapper node")
@@ -19,7 +20,17 @@ Create an Arduino project and clone or copy the contents from the file TTNMapper
 
 ### TTN console
 
-For simplicity, the Activation Method used for the device is ABP. The Frame Counter Checks option must be deactivated in the Device Settings section so that it does not have to be reset every time the module is switched on. In the Decoder section of the Payload Formats of the application, the following code has to be applied:
+#### Device
+
+For simplicity, the Activation Method used for the device is ABP.
+
+The Frame Counter Checks option must be deactivated in the Device Settings section so that it does not have to be reset every time the module is switched on. 
+
+#### Application
+
+In the Integrations section add the TTN Mapper (https://www.thethingsnetwork.org/docs/applications/ttnmapper/#create-the-integration). 
+
+In the Decoder section of the Payload Formats the following code has to be applied:
 
 ```
 function Decoder(bytes, port) {
